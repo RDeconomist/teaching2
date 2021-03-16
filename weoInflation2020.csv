@@ -1,192 +1,192 @@
-country,year,value
-Venezuela,2020,6500
-Zimbabwe,2020,622.779
-Sudan,2020,141.604
-Lebanon,2020,85.452
-Suriname,2020,49.769
-Islamic Republic of Iran,2020,30.516
-South Sudan,2020,27.08
-Yemen,2020,26.4
-Haiti,2020,22.395
-Libya,2020,22.256
-Angola,2020,21.024
-Ethiopia,2020,20.16
-Sierra Leone,2020,15.696
-Zambia,2020,14.45
-Uzbekistan,2020,13.023
-Nigeria,2020,12.88
-Turkey,2020,11.942
-Liberia,2020,11.894
-Democratic Republic of the Congo,2020,11.5
-Pakistan,2020,10.741
-Ghana,2020,10.597
-Uruguay,2020,9.988
-Malawi,2020,9.308
-Guinea,2020,9.1
-Tajikistan,2020,8.075
-Kyrgyz Republic,2020,8.041
-Turkmenistan,2020,8
-São Tomé and Príncipe,2020,7.867
-Burundi,2020,7.556
-Kazakhstan,2020,6.943
-Rwanda,2020,6.9
-Lao P.D.R.,2020,6.5
-Nepal,2020,6.382
-The Gambia,2020,6.145
-Myanmar,2020,6.113
-Tunisia,2020,5.836
-Egypt,2020,5.683
-Bangladesh,2020,5.648
-Afghanistan,2020,5.443
-Kenya,2020,5.3
-Georgia,2020,5.254
-Belarus,2020,5.148
-Jamaica,2020,5.1
-Mongolia,2020,5
-India,2020,4.948
-Eritrea,2020,4.702
-Sri Lanka,2020,4.665
-Niger,2020,4.4
-Nicaragua,2020,4.374
-Madagascar,2020,4.3
-Lesotho,2020,4.259
-Uganda,2020,4.178
-Eswatini,2020,4.115
-Seychelles,2020,3.898
-Solomon Islands,2020,3.877
-Mauritania,2020,3.851
-Vietnam,2020,3.772
-Hungary,2020,3.65
-Mozambique,2020,3.631
-Bhutan,2020,3.62
-Saudi Arabia,2020,3.575
-Tanzania,2020,3.555
-Algeria,2020,3.5
-Mexico,2020,3.396
-Papua New Guinea,2020,3.374
-South Africa,2020,3.335
-Dominican Republic,2020,3.319
-Poland,2020,3.318
-Czech Republic,2020,3.315
-Honduras,2020,3.287
-Russia,2020,3.22
-Ukraine,2020,3.168
-Equatorial Guinea,2020,3.029
-Azerbaijan,2020,3
-Comoros,2020,3
-Gabon,2020,3
-Central African Republic,2020,2.946
-China,2020,2.92
-Vanuatu,2020,2.915
-Paraguay,2020,2.909
-Barbados,2020,2.906
-Romania,2020,2.891
-Chile,2020,2.878
-Djibouti,2020,2.878
-Cameroon,2020,2.801
-Samoa,2020,2.8
-Chad,2020,2.797
-Moldova,2020,2.778
-Brazil,2020,2.729
-Iceland,2020,2.681
-Mauritius,2020,2.55
-Cambodia,2020,2.537
-Benin,2020,2.5
-Republic of Congo,2020,2.494
-Colombia,2020,2.44
-Philippines,2020,2.438
-Namibia,2020,2.329
-Qatar,2020,2.17
-Guatemala,2020,2.143
-Indonesia,2020,2.074
-Guinea-Bissau,2020,2.03
-Burkina Faso,2020,2
-Senegal,2020,1.989
-Peru,2020,1.812
-The Bahamas,2020,1.776
-Dominica,2020,1.752
-New Zealand,2020,1.712
-Macao SAR,2020,1.7
-Bolivia,2020,1.661
-Puerto Rico,2020,1.622
-Botswana,2020,1.618
-Slovak Republic,2020,1.527
-United States,2020,1.52
-Tuvalu,2020,1.5
-United Arab Emirates,2020,1.5
-Kiribati,2020,1.483
-Serbia,2020,1.458
-Albania,2020,1.405
-Norway,2020,1.4
-Togo,2020,1.396
-Fiji,2020,1.3
-Lithuania,2020,1.277
-Austria,2020,1.24
-Aruba,2020,1.222
-Côte d'Ivoire,2020,1.2
-Bulgaria,2020,1.198
-West Bank and Gaza,2020,1.182
-Netherlands,2020,1.176
-Malaysia,2020,1.126
-Cabo Verde,2020,1
-Kuwait,2020,1
-Oman,2020,1
-Antigua and Barbuda,2020,0.991
-Guyana,2020,0.964
-Armenia,2020,0.913
-Marshall Islands,2020,0.9
-Timor-Leste,2020,0.899
-Nauru,2020,0.891
-North Macedonia,2020,0.879
-St. Vincent and the Grenadines,2020,0.866
-Micronesia,2020,0.849
-Panama,2020,0.832
-Malta,2020,0.824
-Sweden,2020,0.821
-Belize,2020,0.803
-Iraq,2020,0.8
-Costa Rica,2020,0.783
-Bosnia and Herzegovina,2020,0.776
-United Kingdom,2020,0.772
-Switzerland,2020,0.77
-Kosovo,2020,0.753
-Australia,2020,0.745
-Finland,2020,0.722
-St. Kitts and Nevis,2020,0.687
-Belgium,2020,0.637
-Cyprus,2020,0.626
-Canada,2020,0.616
-Greece,2020,0.573
-Latvia,2020,0.566
-Israel,2020,0.549
-Tonga,2020,0.546
-Slovenia,2020,0.503
-Korea,2020,0.5
-Mali,2020,0.499
-San Marino,2020,0.498
-Germany,2020,0.495
-France,2020,0.458
-Thailand,2020,0.428
-Singapore,2020,0.407
-Luxembourg,2020,0.405
-Denmark,2020,0.4
-Maldives,2020,0.371
-St. Lucia,2020,0.341
-Hong Kong SAR,2020,0.3
-Brunei Darussalam,2020,0.294
-Jordan,2020,0.282
-Croatia,2020,0.275
-Grenada,2020,0.244
-Spain,2020,0.226
-El Salvador,2020,0.214
-Estonia,2020,0.2
-Ireland,2020,0.2
-Morocco,2020,0.2
-Italy,2020,0.13
-Taiwan Province of China,2020,0.1
-Montenegro,2020,0.071
-Japan,2020,0.063
-Portugal,2020,0.004
-Trinidad and Tobago,2020,0.003
-Bahrain,2020,0
-Palau,2020,0
+country,year,value,rank
+Venezuela,2020,6500,1
+Zimbabwe,2020,622.779,2
+Sudan,2020,141.604,3
+Lebanon,2020,85.452,4
+Suriname,2020,49.769,5
+Islamic Republic of Iran,2020,30.516,6
+South Sudan,2020,27.08,7
+Yemen,2020,26.4,8
+Haiti,2020,22.395,9
+Libya,2020,22.256,10
+Angola,2020,21.024,11
+Ethiopia,2020,20.16,12
+Sierra Leone,2020,15.696,13
+Zambia,2020,14.45,14
+Uzbekistan,2020,13.023,15
+Nigeria,2020,12.88,16
+Turkey,2020,11.942,17
+Liberia,2020,11.894,18
+Democratic Republic of the Congo,2020,11.5,19
+Pakistan,2020,10.741,20
+Ghana,2020,10.597,21
+Uruguay,2020,9.988,22
+Malawi,2020,9.308,23
+Guinea,2020,9.1,24
+Tajikistan,2020,8.075,25
+Kyrgyz Republic,2020,8.041,26
+Turkmenistan,2020,8,27
+São Tomé and Príncipe,2020,7.867,28
+Burundi,2020,7.556,29
+Kazakhstan,2020,6.943,30
+Rwanda,2020,6.9,31
+Lao P.D.R.,2020,6.5,32
+Nepal,2020,6.382,33
+The Gambia,2020,6.145,34
+Myanmar,2020,6.113,35
+Tunisia,2020,5.836,36
+Egypt,2020,5.683,37
+Bangladesh,2020,5.648,38
+Afghanistan,2020,5.443,39
+Kenya,2020,5.3,40
+Georgia,2020,5.254,41
+Belarus,2020,5.148,42
+Jamaica,2020,5.1,43
+Mongolia,2020,5,44
+India,2020,4.948,45
+Eritrea,2020,4.702,46
+Sri Lanka,2020,4.665,47
+Niger,2020,4.4,48
+Nicaragua,2020,4.374,49
+Madagascar,2020,4.3,50
+Lesotho,2020,4.259,51
+Uganda,2020,4.178,52
+Eswatini,2020,4.115,53
+Seychelles,2020,3.898,54
+Solomon Islands,2020,3.877,55
+Mauritania,2020,3.851,56
+Vietnam,2020,3.772,57
+Hungary,2020,3.65,58
+Mozambique,2020,3.631,59
+Bhutan,2020,3.62,60
+Saudi Arabia,2020,3.575,61
+Tanzania,2020,3.555,62
+Algeria,2020,3.5,63
+Mexico,2020,3.396,64
+Papua New Guinea,2020,3.374,65
+South Africa,2020,3.335,66
+Dominican Republic,2020,3.319,67
+Poland,2020,3.318,68
+Czech Republic,2020,3.315,69
+Honduras,2020,3.287,70
+Russia,2020,3.22,71
+Ukraine,2020,3.168,72
+Equatorial Guinea,2020,3.029,73
+Azerbaijan,2020,3,74
+Comoros,2020,3,75
+Gabon,2020,3,76
+Central African Republic,2020,2.946,77
+China,2020,2.92,78
+Vanuatu,2020,2.915,79
+Paraguay,2020,2.909,80
+Barbados,2020,2.906,81
+Romania,2020,2.891,82
+Chile,2020,2.878,83
+Djibouti,2020,2.878,84
+Cameroon,2020,2.801,85
+Samoa,2020,2.8,86
+Chad,2020,2.797,87
+Moldova,2020,2.778,88
+Brazil,2020,2.729,89
+Iceland,2020,2.681,90
+Mauritius,2020,2.55,91
+Cambodia,2020,2.537,92
+Benin,2020,2.5,93
+Republic of Congo,2020,2.494,94
+Colombia,2020,2.44,95
+Philippines,2020,2.438,96
+Namibia,2020,2.329,97
+Qatar,2020,2.17,98
+Guatemala,2020,2.143,99
+Indonesia,2020,2.074,100
+Guinea-Bissau,2020,2.03,101
+Burkina Faso,2020,2,102
+Senegal,2020,1.989,103
+Peru,2020,1.812,104
+The Bahamas,2020,1.776,105
+Dominica,2020,1.752,106
+New Zealand,2020,1.712,107
+Macao SAR,2020,1.7,108
+Bolivia,2020,1.661,109
+Puerto Rico,2020,1.622,110
+Botswana,2020,1.618,111
+Slovak Republic,2020,1.527,112
+United States,2020,1.52,113
+Tuvalu,2020,1.5,114
+United Arab Emirates,2020,1.5,115
+Kiribati,2020,1.483,116
+Serbia,2020,1.458,117
+Albania,2020,1.405,118
+Norway,2020,1.4,119
+Togo,2020,1.396,120
+Fiji,2020,1.3,121
+Lithuania,2020,1.277,122
+Austria,2020,1.24,123
+Aruba,2020,1.222,124
+Côte d'Ivoire,2020,1.2,125
+Bulgaria,2020,1.198,126
+West Bank and Gaza,2020,1.182,127
+Netherlands,2020,1.176,128
+Malaysia,2020,1.126,129
+Cabo Verde,2020,1,130
+Kuwait,2020,1,131
+Oman,2020,1,132
+Antigua and Barbuda,2020,0.991,133
+Guyana,2020,0.964,134
+Armenia,2020,0.913,135
+Marshall Islands,2020,0.9,136
+Timor-Leste,2020,0.899,137
+Nauru,2020,0.891,138
+North Macedonia,2020,0.879,139
+St. Vincent and the Grenadines,2020,0.866,140
+Micronesia,2020,0.849,141
+Panama,2020,0.832,142
+Malta,2020,0.824,143
+Sweden,2020,0.821,144
+Belize,2020,0.803,145
+Iraq,2020,0.8,146
+Costa Rica,2020,0.783,147
+Bosnia and Herzegovina,2020,0.776,148
+United Kingdom,2020,0.772,149
+Switzerland,2020,0.77,150
+Kosovo,2020,0.753,151
+Australia,2020,0.745,152
+Finland,2020,0.722,153
+St. Kitts and Nevis,2020,0.687,154
+Belgium,2020,0.637,155
+Cyprus,2020,0.626,156
+Canada,2020,0.616,157
+Greece,2020,0.573,158
+Latvia,2020,0.566,159
+Israel,2020,0.549,160
+Tonga,2020,0.546,161
+Slovenia,2020,0.503,162
+Korea,2020,0.5,163
+Mali,2020,0.499,164
+San Marino,2020,0.498,165
+Germany,2020,0.495,166
+France,2020,0.458,167
+Thailand,2020,0.428,168
+Singapore,2020,0.407,169
+Luxembourg,2020,0.405,170
+Denmark,2020,0.4,171
+Maldives,2020,0.371,172
+St. Lucia,2020,0.341,173
+Hong Kong SAR,2020,0.3,174
+Brunei Darussalam,2020,0.294,175
+Jordan,2020,0.282,176
+Croatia,2020,0.275,177
+Grenada,2020,0.244,178
+Spain,2020,0.226,179
+El Salvador,2020,0.214,180
+Estonia,2020,0.2,181
+Ireland,2020,0.2,182
+Morocco,2020,0.2,183
+Italy,2020,0.13,184
+Taiwan Province of China,2020,0.1,185
+Montenegro,2020,0.071,186
+Japan,2020,0.063,187
+Portugal,2020,0.004,188
+Trinidad and Tobago,2020,0.003,189
+Bahrain,2020,0,190
+Palau,2020,0,191
