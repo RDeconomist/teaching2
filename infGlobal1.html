@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="infGlobal1"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 2px;
+  border-color:#707070;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var infGlobal1 = 
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+  "description": "Inlfation rates, 2020 - WEO data",
+
+  "title": {
+  "text": "Inflation rates",
+  "subtitle":"All countries with inflation below 25%. Annual % change. Source: WEO",
+  "subtitleFontStyle":"italic",
+  "subtitleFontSize":10,
+  "anchor": "start",
+  "color": "black"
+  },
+  
+  
+  "data": {
+  "url": "https://raw.githubusercontent.com/RDeconomist/teaching2/main/weoInflation2020.csv"
+  },
+
+  "height":500,
+
+  "width":500,
+
+  "transform": [{"filter": {"field": "value", "range": [0, 25]}}],
+  
+  "mark": {"type":"bar",
+          "color":"#179fdb"},
+  
+  "encoding": {
+    
+    "y": {"field": "country",
+          "title":"Country", 
+          "type": "nominal", 
+          "axis": {
+            "labels": ""},
+          "sort":"-x"},
+    
+    "x": {"field": "value", 
+          "type": "quantitative",
+          "title":"Inflation Rate"},
+
+    "tooltip": [
+      {"field": "country", "type": "nominal", "title":"Country"},
+      {"field": "value", "title": "Inflation","type": "quantitative"}
+    ]
+  
+  }
+};
+
+vegaEmbed('#infGlobal1', infGlobal1, {"actions": false});
+</script>
+</div>
+</body>
+</html>
