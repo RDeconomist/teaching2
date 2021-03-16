@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="inf1"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 2px;
+  border-color:#707070;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var inf1 = 
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+ 
+  "description": "Inflation UK",
+
+   "title": {
+    "text": "UK inflation, 1948-2021",
+    "subtitle":"RPI all items, annual change (%), source: ONS",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  
+
+  "data": {
+
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/czbh",
+"format": {"type": "json", "property": "months"}
+
+  },
+
+  "height": 450,
+
+  "width": 550,
+
+  "layer": [
+
+  {"mark": {
+
+    "type": "line",
+
+    "point": false,
+
+    "interpolate": "monotone",
+
+    "color": "darkorange"
+
+  },
+
+  "encoding": {
+
+    "x": {
+
+      "field": "date",
+
+      "type": "temporal",
+
+      "axis": {
+
+        "title": null,
+
+        "grid": false,
+
+        "labelSeparation": 20,
+
+        "ticks": false
+
+      }
+
+    },
+
+    "y": {
+
+      "field": "value",
+
+      "type": "quantitative",
+
+      "title": "",
+
+      "axis": {"grid": false}
+
+    }
+
+  }},
+
+  
+  {
+      "mark": {"type": "rule", "color": "lightgrey", "size": 1.5},
+      "encoding": {"x": {"field": "Lines", "type": "temporal"}},
+      "data": {
+        "values": [
+          {"Lines": "1948"},
+          {"Lines": "1971"},
+          {"Lines": "1976"},
+          {"Lines": "1987"},
+          {"Lines": "1992"},
+          {"Lines": "2008"}
+        ],
+        "format": {"parse": {"Date": "utc:'%Y'"}}
+      }
+    }
+  ]
+  
+  
+
+}
+
+
+vegaEmbed('#inf1', inf1, {"actions": false});
+</script>
+</div>
+</body>
+</html>

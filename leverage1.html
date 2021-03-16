@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<div id="leverage1">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var leverage1 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+"title": {
+    "text": "Pick your leverage wisely",
+    "subtitle":"Four ways to finance a house purchase. Leverage ratios = 1, 2, 5, 10",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "subtitlePadding":2,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "description": "Leverage interactive",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/teaching/main/leverageInteractive.csv",
+   "format": {"type": "csv"}
+  },
+
+  "height": 125,
+  "width": 150,
+
+  "mark": {"type": "bar", "point": false},
+
+  "selection": {
+    "houseValue": {
+      "type": "single",
+      "fields": ["House Value"],
+      "init": {"House Value": "300000"},
+      "bind": {
+        "input": "select",
+        "options": ["200000", "230000", "250000","300000", "320000", "350000", "400000"],
+        "name": "House value"
+      }
+    }
+  },
+
+  "transform": [
+    {"filter": {"selection": "houseValue"}}],
+
+
+  "encoding": {
+    "x": {
+      "field": "Entry2",
+      "type": "ordinal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    },
+
+     "facet": {
+      "field": "LevRatio",
+      "type": "ordinal",
+      "columns": 2,
+      "title": null
+     },
+     
+
+    "color": {
+      "condition": {
+        "test": "datum['Value'] < 0", 
+        "value": "red"},
+      "field": "Type",
+      "type": "nominal",
+      "scale": {"range": ["#BF5FFF", "#ADEAEA", "#70DB93"]},
+      "title": null,
+      "legend": {"orient": "bottom"}
+   
+    }
+  }
+};
+
+vegaEmbed('#leverage1', leverage1, {"actions": false});
+</script>
+</div>
+</body>
+</html>

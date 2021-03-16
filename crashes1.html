@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<div id="crashes1">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var crashes1 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+"title": {
+    "text": "Panics, crashes and manias",
+    "subtitle":"Crises by type, 1800-2016. Source: HBR (2021).",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "description": "Crashes over time",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/teaching/main/crashesLong.csv",
+   "format": {"type": "csv"}
+  },
+
+  "height": 350,
+  "width": 470,
+
+  "mark": {"type": "bar", "point": false},
+
+  "selection": {
+    "crashType": {
+      "type": "single",
+      "fields": ["Type"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Banking",
+          "Currency",
+          "Inflation",
+          "Systemic"
+        ],
+        "name": "Type: "
+      }
+    }
+  },
+
+  "transform": [
+    {"filter": {"selection": "crashType"}}],
+
+
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {"grid": false}
+    },
+
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "Number of countries",
+      "axis": {"grid": false}
+    },
+
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "scale": {"scheme": "oranges"},
+      "title": "Crisis type",
+      "legend": {"orient": "top-left"}
+    }
+         
+  }
+}
+
+vegaEmbed('#crashes1', crashes1, {"actions": false});
+</script>
+</div>
+</body>
+</html>

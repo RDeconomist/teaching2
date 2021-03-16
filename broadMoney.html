@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="broadMoney"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 2px;
+  border-color:#707070;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var broadMoney =
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+  "description": "(M1a) UK broad money aggregate (£m), 1955-2020",
+
+   "title": {
+    "text": "Broad money outstanding",
+    "subtitle":"£ million. Source: Bank of England",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+  
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/ukMacro/M1a.DataHub.MonetaryBroadMoney.csv"},
+  "height": 300,
+  "width": 345,
+  "mark": {
+    "type": "line",
+    "point": false,
+    "interpolate": "monotone",
+    "color": "darkblue"
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "axis": {
+        "title": null,
+        "grid": false,
+        "labelSeparation": 20
+      }
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "",
+      "axis": {"grid": false}
+    },
+    
+    "tooltip": [
+      {"field": "Date", "type": "temporal"},
+      {
+        "field": "Value",
+        "title": "Broad money outstanding",
+        "type": "quantitative"
+      }
+    ]
+  }
+};
+
+
+vegaEmbed('#broadMoney', broadMoney, {"actions": false});
+
+</script>
+</div>
+</body>
+</html>
