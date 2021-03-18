@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="cpiContrib"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 1px;
+  border-color:#d1cfcf;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var cpiContrib = 
+
+{"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+"title": {
+    "text": "CPI - sources of inflation",
+    "subtitle":"Contributions to CPI all items by sub series",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "description": "Coronavirus cases",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/teaching2/main/cpiContributions.csv",
+    "format": {"type": "csv"}
+  },
+
+  "height": 350,
+  "width": 550,
+  
+  "mark": {"type": "bar", "width":3},
+
+   "transform": [ 
+    {"filter": {"selection": "pickSeries"}}
+  ],
+  
+  "selection": {
+    "pickSeries": {
+      "type": "single",
+      "fields": ["series"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "AlcoholTobacco",
+          "ClothingFootwear",
+          "Communication",
+          "Education",
+          "Food",
+          "FurnitureHousehold",
+          "Health",
+          "HousingHouseService",
+          "Misc",
+          "RecreationCulture",
+          "RestaurantsHotels",
+          "Transport"
+        ],
+        "name": "Pick a series: "
+      }
+    }
+  },
+
+  "encoding": {
+
+    "x": {"field": "Date", "type": "temporal", "title": ""},
+
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": ""
+    },        
+
+    "color": {
+      "field": "series",
+      "type": "nominal",
+      "scale": {"scheme": "inferno"},
+      "title": ""
+    }
+  }
+};
+
+vegaEmbed('#cpiContrib', cpiContrib, {"actions": false});
+</script>
+</div>
+</body>
+</html>
