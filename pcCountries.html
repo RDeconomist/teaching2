@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="pcCountries"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 1px;
+  border-color:#d1cfcf;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var pcCountries = 
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Phillips Curves",
+
+  "title": {
+    "text": "Phillips Curves - selected countries",
+    "subtitle":"Unemployment (x) and inflation (y), annual, 1980-2020. Source: IMF WEO.",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/teaching2/main/weoInflationSelectedCountries.csv",
+    "format": {"type": "csv"}
+  },
+
+  "height": 120,
+
+  "width": 120,
+
+  "mark": {"type": "circle", "color":"#00a767", "opacity":0.6},
+
+  "selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"}
+  },
+  
+ 
+  "encoding": {
+    "x": {"field": "Unemployment", "type": "quantitative", "title": ""},
+  
+    "y": {
+      "field": "Inflation",
+      "type": "quantitative",
+      "title": null
+    },
+  
+    "facet": {
+      "field": "country",
+      "type": "nominal",
+      "columns": 4,
+      "title": null
+    },
+   
+    "tooltip": [
+      {"field": "year", "type": "temporal", "title": "Year", "format":"%Y"},
+      {"field": "Unemployment", "type": "quantitative", "title": "Unemployment (%)", "format": ",.1f"
+      },
+      {"field": "Inflation", "type": "quantitative", "title": "Inflation (%)", "format": ",.1f"
+      }
+    ]
+  },
+  "resolve": {"scale": {"y": "independent", "x": "independent"}}
+};
+
+vegaEmbed('#pcCountries', pcCountries, {"actions": false});
+</script>
+</div>
+</body>
+</html>

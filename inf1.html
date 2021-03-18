@@ -17,8 +17,8 @@
   padding: 5px;
   border-radius: 20px;
   border-style:solid;
-  border-width: 2px;
-  border-color:#707070;
+  border-width: 1px;
+  border-color:#d1cfcf;
   width: fit-content">
 
 <!--Now the JavaScript for the chart-->
@@ -40,8 +40,6 @@ var inf1 =
     "color": "black"
   },
 
-  
-
   "data": {
 
     "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/czbh",
@@ -50,66 +48,67 @@ var inf1 =
   },
 
   "height": 450,
-
   "width": 550,
 
-  "layer": [
-
-  {"mark": {
-
-    "type": "line",
-
-    "point": false,
-
-    "interpolate": "monotone",
-
-    "color": "darkorange"
-
-  },
-
   "encoding": {
-
-    "x": {
-
-      "field": "date",
-
-      "type": "temporal",
-
-      "axis": {
-
-        "title": null,
-
-        "grid": false,
-
-        "labelSeparation": 20,
-
-        "ticks": false
-
-      }
-
+    "x": {"field": "date", 
+          "type": "temporal",
+          "title":null,
+          "axis":{
+            "grid":false}
+          }},
+ 
+  "layer": [
+    {"encoding": {
+        "y": {"field": "value", 
+              "type": "quantitative", 
+              "title":" ",
+          "axis":{
+            "grid":false}}},
+        
+        "layer": [
+          {"mark":{
+            "type": "line",
+            "align": false,
+            "interpolate": "step",
+            "color": "#eb5c2e"}},
+          {"transform": 
+            [{"filter": {"selection": "hover"}}], 
+               "mark": {
+                 "type":"circle",
+                 "size":150,
+                 "color":"#eb5c2e"}}
+      ]
     },
-
-    "y": {
-
-      "field": "value",
-
-      "type": "quantitative",
-
-      "title": "",
-
-      "axis": {"grid": false}
-
-    }
-
-  }},
-
-  
-  {
-      "mark": {"type": "rule", "color": "lightgrey", "size": 1.5},
+    
+    {"mark": "rule", 
+      "encoding": {
+         "opacity": {
+           "condition": {"value": 0, "selection": "hover"},
+           "value": 0
+             },
+          "tooltip": [
+          {"field": "Date", "type": "temporal", "format": "%b-%Y", "title":"Date"},  
+          {"field": "value", "type": "quantitative", "format": ",.0f", "title":"Inflation (%)"}
+            ]
+           },
+      "selection": {
+        "hover": {
+          "type": "single",
+          "fields": ["date"],
+          "nearest": true,
+          "on": "mouseover",
+          "empty": "none",
+          "clear": "mouseout"
+        }
+      }
+    },
+    {
+      "mark": {"type": "rule", "color": "lightblue", "size": 2},
       "encoding": {"x": {"field": "Lines", "type": "temporal"}},
       "data": {
         "values": [
-          {"Lines": "1948"},
+          
           {"Lines": "1971"},
           {"Lines": "1976"},
           {"Lines": "1987"},
@@ -120,11 +119,7 @@ var inf1 =
       }
     }
   ]
-  
-  
-
 }
-
 
 vegaEmbed('#inf1', inf1, {"actions": false});
 </script>
