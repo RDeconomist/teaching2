@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="mpFrameworks"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 1px;
+  border-color:#d1cfcf;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var mpFrameworks = 
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "data": {"url": "https://raw.githubusercontent.com/RDeconomist/teaching2/main/mpFrameworks.csv"},
+
+  "description": "Inflation UK",
+
+  "title": {
+    "text": "Monetary frameworks, 1974-2017",
+    "subtitle":"Target variables, 25 advanced economies. Source: monetaryframeworks.org and my calcs.",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "width": 550, "height": 350,
+    
+  "mark": "area",
+  
+  "encoding": {
+    "x": {
+      "timeUnit": "year", 
+      "field": "Year",
+      "axis": {"format": "%Y"},
+      "title":null
+    },
+
+    "y": {
+      "field": "Share", 
+      "type": "quantitative",
+      "axis": {"format": ".0%"},
+      "title":null
+    },
+
+    "color": {
+      "field": "Series",
+      "scale": {"range": ["#179fdb", "#eb5c2e", "#0063af", "#122b39", "lightgrey"]},
+      "title":"Target"
+    },
+    
+    "tooltip":[
+      {"timeUnit": "year", "field": "Year", "title":"Year"},
+      {"field": "Series","type": "nominal","title":"Target"},
+      {"field": "Value","type": "quantitative","format": ".0f","title":"# Countries"},
+      {"field": "Share","type": "quantitative","format": ".0%","title":"Share"}
+    ]
+  
+  }
+}
+
+vegaEmbed('#mpFrameworks', mpFrameworks, {"actions": false});
+</script>
+</div>
+</body>
+</html>
