@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="boeBalanceSheet"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 1px;
+  border-color:#d1cfcf;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var boeBalanceSheet = 
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+  "description": "Bank of England Balance Sheet",
+
+   "title": {
+    "text": "Quantitative easing",
+    "subtitle":"BoE balnace sheet, reserve balances. Source: BoE weekly report",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+  
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/teaching2/main/boeBalanceSheet.csv"},
+
+  "height": 350,
+ 
+  "width": 550,
+  
+   "encoding": {"x": {"field": "Date", "type": "temporal", "axis": {"title":null, "grid": false}}},
+
+  "layer": [
+
+    {"encoding": {
+       "y": {"field": "Reserve balances", 
+              "type": "quantitative", 
+              "title":"",         
+               "axis": {"grid": false}}
+            },
+        "layer": [{"mark": {"type": "line", "color": "orangered"}},
+                  {"transform": 
+                      [{"filter": {"selection": "hover"}}], 
+                        "mark": {
+            "type": "circle",
+            "filled": true,
+            "color":"pink",
+            "size": 300,
+            "stroke": "#DCDCDC",
+            "fillOpacity": 1,
+            "strokeOpacity": 0.8,
+            "strokeWidth": 5
+          }}
+                  ]},
+
+    {"mark": "rule", 
+      "encoding": {
+        "opacity": {"value": 0},
+        "tooltip": [
+          {"field": "Date2", "type": "temporal", "format":"%B, %Y", "title":"Date"},
+          {"field": "Reserve balances", "title": "Reserve balances (£m)", "type": "quantitative", "format": ",.0f"}
+
+        ]
+      },
+      
+      "selection": {
+        "hover": {
+          "type": "single",
+          "fields": ["Date"],
+          "nearest": true,
+          "on": "mouseover",
+          "empty": "none",
+          "clear": "mouseout"
+        }
+      }
+    }
+  ]
+};
+
+vegaEmbed('#boeBalanceSheet', boeBalanceSheet, {"actions": false});
+</script>
+</div>
+</body>
+</html>
