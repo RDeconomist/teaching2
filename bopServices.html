@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="bopServices"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 1px;
+  border-color:#d1cfcf;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var bopServices = 
+
+{  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Services trade - UK",
+    "subtitle": "Services imports and exports, % of GDP. Source: ONS (UKEA).",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "description": "UK trade in services",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/teaching2/main/ukeaBoP.csv",
+    "format": {"type": "csv"}
+  },
+
+  "transform": [
+    {"fold": ["KTMS_gdp", "KTMR_gdp", "KTMQ_gdp"]},
+    {"filter": {"field": "frequency", "equal":"quarterly"}},
+    {"filter": {"field": "Date", "range": [
+          {"year": 1992, "month": "jan", "date": 1},
+          {"year": 2030, "month": "dec", "date": 30}
+        ]}}
+    ]
+    ,
+  "height": 350,
+  "width": 550,
+
+  "encoding": {"x": {"field": "Date", "type": "temporal", "title": null}},
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "legend":{
+            "labelExpr": "{'KTMQ_gdp': 'Exports', 'KTMR_gdp': 'Imports', 'KTMS_gdp':'Balance'}[datum.label]"
+            },
+          "scale": {"scheme": "set1"},
+          "title": null
+        },
+        "y": {"field": "value", 
+              "type": "quantitative", 
+              "title": "",
+              "axis":{"format":",.0%"}}
+      },
+      "layer": [
+        {"mark": "line"},
+        {
+          "transform": [{"filter": {"selection": "hover"}}],
+          "mark": {
+            "type": "circle",
+            "filled": true,
+            "size": 200,
+            "stroke": "#DCDCDC",
+            "fillOpacity": 1,
+            "strokeOpacity": 0.8,
+            "strokeWidth": 5
+          }
+        }
+      ]
+    },
+    {
+      "transform": [{"pivot": "key", "value": "value", "groupby": ["Date"]}],
+      "mark": "rule",
+      "encoding": {
+        "opacity": {"value": 0},
+        "tooltip": [
+          {"field": "Date", "type": "temporal", "format": "%b-%Y"},
+          {"field": "KTMQ_gdp", "type": "quantitative", "format": ",.1%","title": "Exports"},
+          {"field": "KTMR_gdp", "type": "quantitative", "format": ",.1%", "title": "Imports"},
+          {"field": "KTMS_gdp", "type": "quantitative", "format": ",.1%", "title": "Balance"}
+        ]
+      },
+      "selection": {
+        "hover": {
+          "type": "single",
+          "fields": ["Date"],
+          "nearest": true,
+          "on": "mouseover",
+          "empty": "none",
+          "clear": "mouseout"
+        }
+      }
+    }
+  ]
+};
+
+vegaEmbed('#bopServices', bopServices, {"actions": true});
+</script>
+</div>
+</body>
+</html>
