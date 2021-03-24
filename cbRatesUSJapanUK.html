@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--To allow embed in my web page-->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+<body>
+<!--Set the Div that the chart is going in-->
+<!--And some in-line CSS to style the chart-->
+<div id="cbRateUKUSJapan"
+  style= "background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  border-style:solid;
+  border-width: 1px;
+  border-color:#d1cfcf;
+  width: fit-content">
+
+<!--Now the JavaScript for the chart-->
+<script>
+var cbRateUKUSJapan = 
+
+{"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+"title": {
+    "text": "Central Bank rates - US, Japan, UK",
+    "subtitle":"Main policy rate of the Federal Reserve, Bank of Japan and Bank of England",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "description": "Central Bank rates",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/teaching2/main/cbRatesUSJapanUK.csv",
+    "format": {"type": "csv"}
+  },
+
+  "transform": [{"fold": ["US", "Japan", "UK"]}],
+
+  "height": 350,
+  "width": 550,
+
+  "selection": {
+    "centralBank": {
+      "type": "multi", 
+      "fields": ["key"], 
+      "bind": "legend"}
+  },
+
+
+  "mark":{
+    "type":"line",
+    "strokeWidth":2
+    },
+
+  "encoding": {
+    "opacity": {"condition": {"selection": "centralBank", "value": 1}, "value": 0.1},
+
+   "x": {
+     "field": "Date", 
+     "type": "temporal", 
+     "title":null
+     },
+
+   "y": {
+     "field": "value", 
+     "type": "quantitative", 
+     "title":""
+     },
+
+   "color": {
+     "field": "key", 
+      "type": "nominal", 
+      "scale": {"scheme": "set1"},
+      "title":"Index"
+      },
+  
+  "tooltip": [
+          {"field": "Date", "type": "temporal", "format": "%b-%Y"},
+          {"field": "US", "type": "quantitative", "format": ",.1f", "title":"US"},
+          {"field": "UK", "type": "quantitative", "format": ",.1f", "title":"UK"},
+          {"field": "Japan", "type": "quantitative", "format": ",.1f", "title":"Japan"}
+        ]
+  }
+};
+
+vegaEmbed('#cbRateUKUSJapan', cbRateUKUSJapan, {"actions": false});
+</script>
+</div>
+</body>
+</html>
